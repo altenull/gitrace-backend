@@ -1,5 +1,6 @@
 import { green, yellow } from "https://deno.land/std@0.53.0/fmt/colors.ts";
 import { Application } from "https://deno.land/x/oak/mod.ts";
+import "https://deno.land/x/dotenv/load.ts";
 import router from "./api/router.ts";
 
 const HOST: string = "127.0.0.1";
