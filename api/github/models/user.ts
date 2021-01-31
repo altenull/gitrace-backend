@@ -1,6 +1,6 @@
 import { Plan } from "./plan.ts";
 
-export interface User {
+export interface GithubUser {
   login: string;
   id: number;
   node_id: string;
@@ -40,4 +40,18 @@ export interface User {
   collaborators: number;
   two_factor_authentication: boolean;
   plan: Plan;
+}
+
+export interface GitraceUser {
+  id: number;
+  login: string;
+  avatarUrl: string;
+  numberOfFollowers: number;
+  numberOfFollowing: number;
+  createdAt: string;
+  name?: string;
+  company?: string;
+  location?: string;
+  email?: string;
+  bio?: string;
 }
