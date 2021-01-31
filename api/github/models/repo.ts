@@ -2,7 +2,7 @@ import { License } from "./license.ts";
 import { Owner } from "./owner.ts";
 import { Permissions } from "./permissions.ts";
 
-export interface Repo {
+export interface GithubRepo {
   id: number;
   node_id: string;
   name: string;
@@ -77,4 +77,17 @@ export interface Repo {
   watchers: number;
   default_branch: string;
   permissions: Permissions;
+}
+
+export interface GitraceRepo {
+  id: number;
+  name: string;
+  size: number;
+  numberOfStars: number;
+  numberOfWatchers: number;
+  isArchived: boolean;
+  createdAt: string;
+  pushedAt: string;
+  description?: string;
+  language?: string;
 }
