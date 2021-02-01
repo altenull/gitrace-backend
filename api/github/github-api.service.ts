@@ -25,14 +25,14 @@ export default class GithubApiService {
       .catch(errorHandler)) as GitraceRepo[];
   }
 
-  async getPunchCard(userName: string, repoName: string): Promise<PunchCard> {
-    const url: string = `${GITHUB_API_END_POINT}/repos/${userName}/${repoName}/stats/punch_card`;
+  async getPunchCard(owner: string, repoName: string): Promise<PunchCard> {
+    const url: string = `${GITHUB_API_END_POINT}/repos/${owner}/${repoName}/stats/punch_card`;
 
     return (await githubApi<PunchCard>(url).catch(errorHandler)) as PunchCard;
   }
 
-  async getLanguages(userName: string, repoName: string): Promise<Languages> {
-    const url: string = `${GITHUB_API_END_POINT}/repos/${userName}/${repoName}/languages`;
+  async getLanguages(owner: string, repoName: string): Promise<Languages> {
+    const url: string = `${GITHUB_API_END_POINT}/repos/${owner}/${repoName}/languages`;
 
     return (await githubApi<Languages>(url).catch(errorHandler)) as Languages;
   }

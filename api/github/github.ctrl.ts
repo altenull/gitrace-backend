@@ -45,11 +45,11 @@ export const getPunchCard = async ({
   params,
   response,
 }: {
-  params: { userName: string; repoName: string };
+  params: { owner: string; repoName: string };
   response: Response;
 }) => {
   const punchCard: PunchCard = await githubApiService.getPunchCard(
-    params.userName,
+    params.owner,
     params.repoName
   );
 
@@ -63,11 +63,11 @@ export const getLanguages = async ({
   params,
   response,
 }: {
-  params: { userName: string; repoName: string };
+  params: { owner: string; repoName: string };
   response: Response;
 }) => {
   const languages: Languages = await githubApiService.getLanguages(
-    params.userName,
+    params.owner,
     params.repoName
   );
 
