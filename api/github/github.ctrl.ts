@@ -2,6 +2,7 @@ import GithubApiService from "./github-api.service.ts";
 import { GitraceUser } from "./models/user.ts";
 import { GitraceRepo } from "./models/repo.ts";
 import { PunchCard } from "./models/punch-card.ts";
+import { Languages } from "./models/language.ts";
 import type { Response } from "https://deno.land/x/oak/mod.ts";
 
 const githubApiService = new GithubApiService();
@@ -53,8 +54,25 @@ export const getPunchCard = async ({
   );
 
   if (punchCard != null) {
-    console.log(punchCard);
     response.status = 200;
     response.body = punchCard;
+  }
+};
+
+export const getLanguages = async ({
+  params,
+  response,
+}: {
+  params: { userName: string; repoName: string };
+  response: Response;
+}) => {
+  const languages: Languages = await githubApiService.getLanguages(
+    params.userName,
+    params.repoName
+  );
+
+  if (languages != null) {
+    response.status = 200;
+    response.body = languages;
   }
 };

@@ -9,5 +9,9 @@ router.get(
   "/api/users/:userName/repos/:repoName/punchCard",
   githubCtrl.getPunchCard
 );
+router.get(
+  "/api/users/:userName/repos/:repoName/languages",
+  githubCtrl.getLanguages
+);
 
 export default router;
