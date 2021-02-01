@@ -6,12 +6,16 @@ const router = new Router();
 router.get("/api/users/:userName", githubCtrl.getUser);
 router.get("/api/users/:userName/repos", githubCtrl.getRepos);
 router.get(
-  "/api/users/:userName/repos/:repoName/punchCard",
+  "/api/owners/:owner/repos/:repoName/punchCard",
   githubCtrl.getPunchCard
 );
 router.get(
-  "/api/users/:userName/repos/:repoName/languages",
+  "/api/owners/:owner/repos/:repoName/languages",
   githubCtrl.getLanguages
+);
+router.get(
+  "/api/owners/:owner/repos/:repoName/commitActivities",
+  githubCtrl.getCommitActivities
 );
 
 export default router;
