@@ -1,4 +1,4 @@
-import { GitraceRepo, GithubRepo } from "../models/repo.ts";
+import { GithubRepo, GitraceRepo } from "../models/repo.ts";
 
 export const parseGitraceRepos = (githubRepos: GithubRepo[]): GitraceRepo[] => {
   return githubRepos.map(
@@ -24,6 +24,6 @@ export const parseGitraceRepos = (githubRepos: GithubRepo[]): GitraceRepo[] => {
       pushedAt: pushed_at,
       ...(description != null && { description }),
       ...(language != null && { language }),
-    })
+    }),
   );
 };

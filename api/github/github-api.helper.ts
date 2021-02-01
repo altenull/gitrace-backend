@@ -4,7 +4,7 @@ const getGithubApiHeaders = () => {
   requestHeaders.append("Accept", "application/vnd.github.v3+json");
   requestHeaders.append(
     "Authorization",
-    `token ${Deno.env.get("GITHUB_TOKEN")}`
+    `token ${Deno.env.get("GITHUB_TOKEN")}`,
   );
 
   return requestHeaders;

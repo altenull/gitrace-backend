@@ -7,15 +7,15 @@ router.get("/api/users/:userName", githubCtrl.getUser);
 router.get("/api/users/:userName/repos", githubCtrl.getRepos);
 router.get(
   "/api/owners/:owner/repos/:repoName/punchCard",
-  githubCtrl.getPunchCard
+  githubCtrl.getPunchCard,
 );
 router.get(
   "/api/owners/:owner/repos/:repoName/languages",
-  githubCtrl.getLanguages
+  githubCtrl.getLanguages,
 );
 router.get(
   "/api/owners/:owner/repos/:repoName/commitActivities",
-  githubCtrl.getCommitActivities
+  githubCtrl.getCommitActivities,
 );
 
 export default router;

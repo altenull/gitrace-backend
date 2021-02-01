@@ -16,7 +16,7 @@ export const getUser = async ({
   response: Response;
 }) => {
   const gitraceUser: GitraceUser = await githubApiService.getUser(
-    params.userName
+    params.userName,
   );
 
   if (gitraceUser != null) {
@@ -33,7 +33,7 @@ export const getRepos = async ({
   response: Response;
 }) => {
   const gitraceRepos: GitraceRepo[] = await githubApiService.getRepos(
-    params.userName
+    params.userName,
   );
 
   if (gitraceRepos != null) {
@@ -51,7 +51,7 @@ export const getPunchCard = async ({
 }) => {
   const punchCard: PunchCard = await githubApiService.getPunchCard(
     params.owner,
-    params.repoName
+    params.repoName,
   );
 
   if (punchCard != null) {
@@ -69,7 +69,7 @@ export const getLanguages = async ({
 }) => {
   const languages: Languages = await githubApiService.getLanguages(
     params.owner,
-    params.repoName
+    params.repoName,
   );
 
   if (languages != null) {
@@ -85,10 +85,11 @@ export const getCommitActivities = async ({
   params: { owner: string; repoName: string };
   response: Response;
 }) => {
-  const gitraceCommitActivities: GitraceCommitActivity[] = await githubApiService.getCommitActivities(
-    params.owner,
-    params.repoName
-  );
+  const gitraceCommitActivities: GitraceCommitActivity[] =
+    await githubApiService.getCommitActivities(
+      params.owner,
+      params.repoName,
+    );
 
   if (gitraceCommitActivities != null) {
     response.status = 200;

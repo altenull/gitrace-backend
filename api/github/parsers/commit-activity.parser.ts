@@ -5,12 +5,12 @@ import {
 import { parseGitraceAuthor } from "./author.parser.ts";
 
 export const parseGitraceCommitActivities = (
-  githubCommitActivities: GithubCommitActivity[]
+  githubCommitActivities: GithubCommitActivity[],
 ): GitraceCommitActivity[] =>
   githubCommitActivities.map(
     ({ total, weeks, author }: GithubCommitActivity) => ({
       totalCommits: total,
       weeklyCommitActivities: weeks,
       author: parseGitraceAuthor(author),
-    })
+    }),
   );
