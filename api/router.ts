@@ -5,5 +5,9 @@ const router = new Router();
 
 router.get("/api/users/:userName", githubCtrl.getUser);
 router.get("/api/users/:userName/repos", githubCtrl.getRepos);
+router.get(
+  "/api/users/:userName/repos/:repoName/punchCard",
+  githubCtrl.getPunchCard
+);
 
 export default router;

@@ -1,6 +1,7 @@
 import { githubApi, errorHandler } from "./github-api.helper.ts";
 import { GithubUser, GitraceUser } from "./models/user.ts";
 import { GithubRepo, GitraceRepo } from "./models/repo.ts";
+import { PunchCard } from "./models/punch-card.ts";
 import { parseGitraceUser } from "./parsers/user.parser.ts";
 import { parseGitraceRepos } from "./parsers/repo.parser.ts";
 
@@ -21,5 +22,11 @@ export default class GithubApiService {
     return (await githubApi<GithubRepo[]>(url)
       .then(parseGitraceRepos)
       .catch(errorHandler)) as GitraceRepo[];
+  }
+
+  async getPunchCard(userName: string, repoName: string) {
+    const url: string = `${GITHUB_API_END_POINT}/repos/${userName}/${repoName}/stats/punch_card`;
+
+    return (await githubApi<PunchCard>(url).catch(errorHandler)) as PunchCard;
   }
 }
